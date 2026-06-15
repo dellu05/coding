@@ -1,44 +1,34 @@
-"""Given the root of a binary tree. Check whether it is a BST or not.
-Note: We are considering that BSTs cannot contain duplicate Nodes.
-A BST is defined as follows:
-• The left subtree of a node contains only nodes with keys less than the node's key.
-• The right subtree of a node contains only nodes with keys greater than the node's key.
-• Both the left and right subtrees must also be binary search trees.
+"""Given a matrix mat[][] of size N x M, where every row and column is sorted in increasing
+order, and a number X is given. The task is to find whether element X is present in the matrix
+or not.
 Example 1:
 Input:
-2
-/ \
-1 3
-Output: 1
+N = 3, M = 3
+mat[][] = 3 30 38
+44 52 54
+57 60 69
+X = 62
+Output
+0
 Explanation:
-The left subtree of root node contains node
-with key lesser than the root nodes key and
-the right subtree of root node contains node
-with key greater than the root nodes key.
-Hence, the tree is a BST.
+62 is not present in the
+matrix, so output is 0
 Example 2:
 Input:
-2
-\
-7
-\
-6
-\
-5
-\
-9
-\
-2
-\
-6
-Output: 0
+N = 1, M = 6
+mat[][] = 18 21 27 38 55 67
+X = 55
+Output:
+1
 Explanation:
-Since the node with value 7 has right subtree
-nodes with keys less than 7, this is not a BST.
-Expected Time Complexity: O(N).
-Expected Auxiliary Space: O(Height of the BST).
+55 is present in the
+matrix at 5th cell.
+Expected Time Complexity: O(N+M).
+Expected Auxiliary Space: O(1).
 Constraints:
-0 <= Number of edges <= 100000
+1 <= N, M <= 1005
+1 <= mat[][] <= 10000000
+1<= X <= 10000000
 """
 def search_matrix(mat, n, m, x):
     row = 0
