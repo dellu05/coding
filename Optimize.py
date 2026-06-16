@@ -61,3 +61,18 @@ def calculate_navigable_airspace(heights):
 buildings = [0,1,0,2,1,0,1,3,2,1,2,1]
 result = calculate_navigable_airspace(buildings)
 print("Total Navigable Airspace =", result)
+
+#solution
+def airspace(h):
+    l,r,lm,rm,ans=0,len(h)-1,0,0,0
+    while l<r:
+        if h[l]<h[r]:
+            lm=max(lm,h[l]);ans+=lm-h[l];l+=1
+        else:
+            rm=max(rm,h[r]);ans+=rm-h[r];r-=1
+    return ans
+
+Time Complexity : O(n)
+Space Complexity: O(1)
+LOC inside function: ≤ 8
+
